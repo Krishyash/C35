@@ -18,6 +18,8 @@ function setup(){
 
 function draw(){
     background("white");
+    if(position !== undefinied){
+        
     if(keyDown(LEFT_ARROW)){
         changePosition(-1,0);
     }
@@ -30,8 +32,10 @@ function draw(){
     else if(keyDown(DOWN_ARROW)){
         changePosition(0,+1);
     }
+    
     drawSprites();
-}
+    }
+    }
 
 function changePosition(x,y){
     database.ref('ball/position').set({
